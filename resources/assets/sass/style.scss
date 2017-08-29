@@ -1,0 +1,31 @@
+
+$bgColor:#fee;
+$txtColor:#000;
+
+@mixin fullBox{
+// background:$bgColor;
+// color:$txtColor;
+
+}
+
+@mixin grid($cols,$marg){
+float:left;
+ 
+
+// width: ((100% - (($col - 1)*$mrg)) / $col);
+ margin: 0 $marg $marg 0;
+    width: ( (100% - (($cols - 1) * $marg )) / $cols );
+ // &:nth-child($col){
+ 
+    &:nth-child(#{$cols}n){
+   
+ 	margin-right:0;
+  }
+}
+
+.box{
+	@include grid(10,.5%);
+	background:$bgColor;
+	height:100px;
+
+} 
